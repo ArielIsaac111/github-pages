@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: pink;
+        }
+        #mensaje {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        #si {
+            background-color: green;
+            color: white;
+        }
+        #no {
+            background-color: red;
+            color: white;
+        }
+        #resultado {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .imagen-video {
+            margin-top: 20px;
+            width: 300px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="mensaje">¿Quieres ser mi Valentín, Melanny? ❤️</h1>
+    <button id="si" onclick="aceptar()">Sí</button>
+    <button id="no" onclick="rechazar()">No</button>
+    
+    <div id="resultado">
+        <p>¡Sabía que querías, Melanny! Te quiero muchooo ❤️</p>
+      
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/shorts/KW5or8HLwiU" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <br>
+    <img src="https://i.pinimg.com/736x/0a/63/1d/0a631d43ccc073b54a6781f0c9f5aed2.jpg" class="imagen-video">
+    <br>
+
+    
+    <script>
+        let frases = [
+            "¿Estás segura?",
+            "¿Realmente segura?",
+            "¿Segurísima?",
+            "¿No quieres pensarlo otra vez?",
+            "Por favor di que sí 🥺",
+            "Vamos, di que sí 💕"
+        ];
+        let indiceFrase = 0;
+        let tamanoSi = 18;
+        
+        function rechazar() {
+            document.getElementById("mensaje").innerText = frases[indiceFrase];
+            indiceFrase = (indiceFrase + 1) % frases.length;
+            tamanoSi += 5;
+            document.getElementById("si").style.fontSize = tamanoSi + "px";
+        }
+        
+        function aceptar() {
+            document.getElementById("resultado").style.display = "block";
+            document.getElementById("mensaje").innerText = "¡Sabía que querías, Melanny! Te quiero muchooo ❤️";
+        }
+    </script>
+</body>
+</html>
